@@ -1,0 +1,95 @@
+// --------------------------------------------
+// Colors -------------------------------------
+// Usage example: color(primary, main)
+// --------------------------------------------
+$color: (
+	typography: (
+		1: #000000,        // Color principal para textos (tu morado)
+		2: #93A2B3,        // Morado más claro para textos secundarios
+		3: #A68BB5,        // Morado suave para textos terciarios
+		1i: #FFFFFF,       // Texto blanco sobre fondos oscuros
+		2i: rgba( #FFFFFF, .85 ) // Texto blanco semitransparente
+	),
+	bg: (
+		1: #E0DBD8,        // Fondo blanco principal
+		2: #FFFFFF,        // Tu beige como fondo secundario
+		3: #D0C7C2        // Beige más oscuro para variaciones
+	),
+	primary: (
+		1: #552D6F,        // Tu morado como color primario principal
+		2: #7A5A8A,        // Morado más claro para hover/active
+		3: #3D1F4F,        // Morado más oscuro para estados pressed
+ 	),
+ 	secondary: (
+		1: #8B6F9B,        // Morado intermedio para elementos secundarios
+		2: #B8A5C4,        // Morado muy claro para acentos
+		3: #6B4A7A         // Morado medio-oscuro
+ 	),
+ 	additional: (
+		1: #D4AF37,        // Dorado elegante para acentos especiales
+		2: #552D6F         // Tu morado como color adicional
+ 	)
+);
+
+// --------------------------------------------
+// Typography ---------------------------------
+// --------------------------------------------
+$font__family: (
+	base: '"Lato", sans-serif', // font-family(base)
+	heading: '"PT Serif", serif', // font-family(heading)
+	code: 'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace', // font-family(code)
+	pre: '"Courier 10 Pitch", Courier, monospace' // font-family(pre)
+);
+
+$font__sizes: (
+	alpha:   ( 42px, 52px, -0.1px ), // font-size, line-height, kerning (use '0' if don't want to output any kerning)
+	beta:    ( 36px, 46px, -0.2px ),
+	gamma:   ( 30px, 40px, -0.1px ),
+	delta:   ( 20px, 30px, -0.1px ),
+	epsilon: ( 18px, 27px, -0.1px ),
+	zeta:    ( 16px, 24px, -0.1px ),
+	eta:     ( 14px, 20px, 0px ),
+	theta:   ( 13px, 18px, 0px )
+);
+
+$font__scale: (
+	desktop: (                             // i.e. $breakpoint__m + $breakpoint__l (600 - 1024)
+		1: map-get($font__sizes, alpha),   // H1
+		2: map-get($font__sizes, beta),    // H2
+		3: map-get($font__sizes, gamma),   // H3
+		4: map-get($font__sizes, delta),   // H4, H5, H6
+		5: map-get($font__sizes, delta),   // Body
+		6: map-get($font__sizes, epsilon), // Text small (e.g. features description)
+		7: map-get($font__sizes, zeta),    // Text smaller (e.g. pricing table's lists)
+		8: map-get($font__sizes, eta),     // Footer area
+		9: map-get($font__sizes, theta)    // Header links, buttons
+	),
+	mobile: (                              // i.e. $breakpoint__xs + $breakpoint__s (up to 600)
+		1: map-get($font__sizes, beta),    // H1
+		2: map-get($font__sizes, gamma),   // H2
+		3: map-get($font__sizes, delta),   // H3
+		4: map-get($font__sizes, epsilon), // H4, H5, H6
+		5: map-get($font__sizes, epsilon), // Body
+		6: map-get($font__sizes, epsilon), // Text small (e.g. features description)
+		7: map-get($font__sizes, zeta),    // Text smaller (e.g. pricing table's lists)
+		8: map-get($font__sizes, eta),     // Footer area
+		9: map-get($font__sizes, theta)    // Header links, buttons
+	)
+);
+
+$font__weight: (
+	regular: 400, 	// font__weight(regular)
+	medium: 500,	// font__weight(medium)
+	semibold: 600,	// font__weight(semi-bold)
+	bold: 700		// font__weight(bold)
+);
+
+// --------------------------------------------
+// Structure ----------------------------------
+// --------------------------------------------
+$content__padding: (
+	mobile: 16px,
+	desktop:  24px
+);
+$container__width: 1080px;
+$container__width-sm: 800px;
